@@ -12,6 +12,7 @@ public class OS {
 		switch (sc.nextInt()) {
             case 1:
                 System.out.println("-- OS started");
+                
                 workWithCalculatorAndFileManager();
                 break;
             case 2:
@@ -25,7 +26,7 @@ public class OS {
         }
 	}	
 	
-	static void workWithCalculatorAndFileManager() throws Exception{
+	static void workWithCalculatorAndFileManager() throws ComputerAccessException{
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("--------------------------------------------------");
@@ -33,14 +34,25 @@ public class OS {
 		
 		switch (sc.nextInt()) {
         case 1:
+        	if (WorkingComputer.pc1 == null) throw new ComputerAccessException();
             CalculatorWithSwitch.main(null);
             break;
         case 2:
-            FileManager.copyFileText();
+            try {
+				FileManager.copyFileText();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             break;
         default: 
             System.out.println("You choise is wrong, please enter 1 or 2");
-			startOS();
+			try {
+				startOS();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             break;
 		}
 	}

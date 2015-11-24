@@ -2,8 +2,9 @@ package myPack;
 import java.util.Scanner;
 
 public class CalculatorWithSwitch {
-	public static int getOperation(String operation) {
+	public static int getOperation(String operation) throws ComputerAccessException{
 
+		
         int operationNumber = 0;
 
         if (operation == null) {
@@ -37,7 +38,7 @@ public class CalculatorWithSwitch {
 			return result;
 	}
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ComputerAccessException {
 		
 		System.out.println("Vvedite dannie cherez probel v vide  __chislo1__ operation __chislo2__ Example: 10 + 23, esli chislo drobnoe vvedite cherez \".\" Example: 10.01 + 23.005");
 		System.out.println();

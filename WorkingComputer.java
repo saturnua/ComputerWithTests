@@ -5,6 +5,7 @@ import java.io.*;
 import java.io.IOException;
 
 class WorkingComputer {
+	static Computer pc1;
 	
 	static void turnOn()throws Exception{
 		System.out.println("--------------------------------------------------");
@@ -15,8 +16,8 @@ class WorkingComputer {
 		switch (sc.nextInt()) {
             case 1:
             	Computer.powerSwitch(1);
-            	Computer pc1 = new Computer(300,1024,"Asus","Gygabyte");
-        		System.out.println("Computer starts anh have parameters: " + pc1.toString());
+            	//pc1 = new Computer(300,1024,"Asus","Gygabyte");
+        		System.out.println("Computer starts anh have parameters: " /* + pc1.toString()*/);
 				installOS();
                 break;
             case 2:
