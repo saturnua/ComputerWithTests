@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class OS {
 
-	static void startOS() throws Exception{
+	void startOS() throws Exception{
 			
 		Scanner sc = new Scanner(System.in);
 		System.out.println("--------------------------------------------------");
@@ -12,12 +12,12 @@ public class OS {
 		switch (sc.nextInt()) {
             case 1:
                 System.out.println("-- OS started");
-                
                 workWithCalculatorAndFileManager();
                 break;
             case 2:
                 System.out.println("-- OS not started");
-				WorkingComputer.turnOn();
+				WorkingComputer comp = new WorkingComputer();
+				comp.turnOn();
                 break;
             default: 
                 System.out.println("You choise is wrong, please enter 1 or 2");
@@ -34,8 +34,12 @@ public class OS {
 		
 		switch (sc.nextInt()) {
         case 1:
-        	if (WorkingComputer.pc1 == null) throw new ComputerAccessException();
-            CalculatorWithSwitch.main(null);
+            CalculatorWithSwitch runCalc = new CalculatorWithSwitch();
+            if(WorkingComputer.pc1==null) {
+            	throw new ComputerAccessException();
+            } else {
+            runCalc.workCalc();
+            }
             break;
         case 2:
             try {
@@ -48,7 +52,8 @@ public class OS {
         default: 
             System.out.println("You choise is wrong, please enter 1 or 2");
 			try {
-				startOS();
+				OS os = new OS();
+				os.startOS();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

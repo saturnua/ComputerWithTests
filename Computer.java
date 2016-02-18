@@ -15,7 +15,7 @@ public class Computer {
 	}
 	
 	
-	static void powerSwitch(int state){  //state - состояние выключателя
+	public static void powerSwitch(int state){  //state - состояние выключателя
 			if(state == 1){
 				System.out.println("Switch turn on");
 			}
@@ -30,14 +30,4 @@ public class Computer {
         return "Computer powered "+this.powerSuply+" Watt power supply, "+" it has "+this.ram+" Mb RAM "+ ", and also it buld on "+this.mainboard+" mainboard and videocard by "+this.videocard;
     }
 	
-	
-	public static void main(String[] args){
-		
-		
-		Computer pc1 = new Computer(300,1024,"Asus","Gygabyte");
-		
-		System.out.println(pc1.toString());
-		Computer.powerSwitch(0);
-		
-	}
 }

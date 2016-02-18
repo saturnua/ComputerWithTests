@@ -22,11 +22,4 @@ public class FileManager {
 			PrintWriter pw = new PrintWriter(System.out, true);
 		    pw.println(s);
 		}
-		
-		public static void main(String[] args) throws Exception{
-			
-			FileManager.copyFileText();
-			
-		
-		}
 }
